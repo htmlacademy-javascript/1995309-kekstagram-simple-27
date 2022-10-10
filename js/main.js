@@ -1,4 +1,4 @@
-//Функция возвращает случайное целое число из переданного диапазона включительно (подсмотрено в MDN)
+//Функция возвращает случайное целое число из переданного диапазона включительно (подсмотрено: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min); //округление минимального числа диапазона до целого
   max = Math.floor(max); //округление максимального числа диапазона до целого
@@ -10,7 +10,7 @@ function getRandomIntInclusive(min, max) {
   return NaN;
 }
 
-//Функция для проверки максимальной длины строки
+//Функция для проверки максимальной длины строки (подсмотрено: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 
 function getStringLength(string, maxL) {
 
