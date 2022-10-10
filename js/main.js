@@ -10,7 +10,7 @@ function getRandomIntInclusive(min, max) {
   return NaN;
 }
 
-getRandomIntInclusive(8, 25)
+getRandomIntInclusive(8, 25);
 
 //Функция для проверки максимальной длины строки (подсмотрено: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 
@@ -22,3 +22,5 @@ function getStringLength(string, maxL) {
 
   return false; //результат false, если строка не проходит по длине
 }
+
+getStringLength('Hello!', 100);
