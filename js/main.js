@@ -55,26 +55,29 @@ const photoDescriptions = [
   'Приехали спасатели меня спасать (я сидел на спине третьего бегемота)'
 ];
 
+//Константы диапазонов
+const PHOTO_COUNT = 25;
+
+const LIKES_COUNT = {
+  MIN: 15,
+  MAX: 200
+};
+
+const COMMENTS_COUNT = {
+  MIN: 0,
+  MAX: 200
+};
+
+
 //Функция, создающая объект с описанием фотографии
-const createPhotoDescription = () => {
-
-  //Переменная случайных чисел фотографий
-  const randomPhotoNumber = getRandomIntInclusive(1, 25);
-
-  //Константы диапазонов случайных чисел лайков и комментариев
-  const MIN_LIKES = 15;
-  const MAX_LIKES = 200;
-  const MIN_COMMENTS = 0;
-  const MAX_COMMENTS = 200;
+const createPhotoDescription = (index) => ({
 
   //Структура объекта с описанием фотографии
-  return {
-    id: randomPhotoNumber,
-    url: `photos/${randomPhotoNumber}.jpg`,
-    description: photoDescriptions[randomPhotoNumber - 1],
-    likes: getRandomIntInclusive(MIN_LIKES, MAX_LIKES),
-    comments: getRandomIntInclusive(MIN_COMMENTS, MAX_COMMENTS)
-  };
-};
+  id: index,
+  url: `photos/${index}.jpg`,
+  description: photoDescriptions[index - 1],
+  likes: getRandomIntInclusive(LIKES_COUNT.MIN, LIKES_COUNT.MAX),
+  comments: getRandomIntInclusive(COMMENTS_COUNT.MIN, COMMENTS_COUNT.MAX)
+});
 
 createPhotoDescription();
