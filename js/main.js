@@ -28,16 +28,19 @@ function getStringLength(string, maxL) {
 
 getStringLength('Hello!', 100);
 
-const randomPhotoNumber = getRandomIntInclusive(1, 25);
-const likesRandomNumber = getRandomIntInclusive(15, 200);
-const commentsRandomNumber = getRandomIntInclusive(0, 200);
 
 const createPhotoDescription = () => {
+  const randomPhotoNumber = getRandomIntInclusive(1, 25);
+  const likesRandomNumber = getRandomIntInclusive(15, 200);
+  const commentsRandomNumber = getRandomIntInclusive(0, 200);
+
   return {
-    id: ,
-    url: '',
+    id: randomPhotoNumber,
+    url: `photos/${randomPhotoNumber}.jpg`,
     description: '',
-    likes: ,
-    comments:
-  }
+    likes: likesRandomNumber,
+    comments: commentsRandomNumber
+  };
 };
+
+createPhotoDescription();
