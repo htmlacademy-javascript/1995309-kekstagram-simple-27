@@ -27,3 +27,13 @@ function getStringLength(string, maxL) {
 }
 
 getStringLength('Hello!', 100);
+
+const createPhotoDescription = () => {
+  return {
+    id: ,
+    url: '',
+    description: '',
+    likes: ,
+    comments:
+  }
+};
