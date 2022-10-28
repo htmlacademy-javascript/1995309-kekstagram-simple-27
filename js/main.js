@@ -28,6 +28,10 @@ function getStringLength(string, maxL) {
 
 getStringLength('Hello!', 100);
 
+const randomPhotoNumber = getRandomIntInclusive(1, 25);
+const likesRandomNumber = getRandomIntInclusive(15, 200);
+const commentsRandomNumber = getRandomIntInclusive(0, 200);
+
 const createPhotoDescription = () => {
   return {
     id: ,
