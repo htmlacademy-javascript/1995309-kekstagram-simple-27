@@ -17,8 +17,6 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(result); //Максимум и минимум включаются
 }
 
-getRandomIntInclusive(8, 25);
-
 //Функция для проверки максимальной длины строки (подсмотрено: https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 
 function getStringLength(string, maxL) {
@@ -28,12 +26,15 @@ function getStringLength(string, maxL) {
 
 getStringLength('Hello!', 100);
 
-
+//Функция, создающая объект с описанием фотографии
 const createPhotoDescription = () => {
+
+  //Переменные случайных чисел
   const randomPhotoNumber = getRandomIntInclusive(1, 25);
   const likesRandomNumber = getRandomIntInclusive(15, 200);
   const commentsRandomNumber = getRandomIntInclusive(0, 200);
 
+  //Структура объекта с описанием фотографии
   return {
     id: randomPhotoNumber,
     url: `photos/${randomPhotoNumber}.jpg`,
