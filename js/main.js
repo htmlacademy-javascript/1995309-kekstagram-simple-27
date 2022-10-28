@@ -27,7 +27,7 @@ function getStringLength(string, maxL) {
 getStringLength('Hello!', 100);
 
 //Массив с описаниями
-const photoDescriptions = [
+const PHOTO_DESCRIPTIONS = [
   'Шезлонги на берегу водохранилища. Испытание нового квадрокоптера.',
   'Колоритный указатель в сторону пляжа)',
   'Мой любимый залив в моё любимое время суток',
@@ -68,16 +68,20 @@ const COMMENTS_COUNT = {
   MAX: 200
 };
 
-
 //Функция, создающая объект с описанием фотографии
 const createPhotoDescription = (index) => ({
 
   //Структура объекта с описанием фотографии
   id: index,
   url: `photos/${index}.jpg`,
-  description: photoDescriptions[index - 1],
+  description: PHOTO_DESCRIPTIONS[index - 1],
   likes: getRandomIntInclusive(LIKES_COUNT.MIN, LIKES_COUNT.MAX),
   comments: getRandomIntInclusive(COMMENTS_COUNT.MIN, COMMENTS_COUNT.MAX)
 });
 
-createPhotoDescription();
+//Функция создания массива объектов
+const getPhotoDescriptions = () => {
+  Array.from({length: PHOTO_COUNT}, (_, index) => createPhotoDescription(index + 1));
+};
+
+getPhotoDescriptions();
