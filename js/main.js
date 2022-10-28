@@ -58,18 +58,22 @@ const photoDescriptions = [
 //Функция, создающая объект с описанием фотографии
 const createPhotoDescription = () => {
 
-  //Переменные случайных чисел
+  //Переменная случайных чисел фотографий
   const randomPhotoNumber = getRandomIntInclusive(1, 25);
-  const likesRandomNumber = getRandomIntInclusive(15, 200);
-  const commentsRandomNumber = getRandomIntInclusive(0, 200);
+
+  //Константы диапазонов случайных чисел лайков и комментариев
+  const MIN_LIKES = 15;
+  const MAX_LIKES = 200;
+  const MIN_COMMENTS = 0;
+  const MAX_COMMENTS = 200;
 
   //Структура объекта с описанием фотографии
   return {
     id: randomPhotoNumber,
     url: `photos/${randomPhotoNumber}.jpg`,
     description: photoDescriptions[randomPhotoNumber - 1],
-    likes: likesRandomNumber,
-    comments: commentsRandomNumber
+    likes: getRandomIntInclusive(MIN_LIKES, MAX_LIKES),
+    comments: getRandomIntInclusive(MIN_COMMENTS, MAX_COMMENTS)
   };
 };
 
